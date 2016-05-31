@@ -68,7 +68,7 @@
             }
         }
 
-        [AfterTestRun]
+        [AfterScenario]
         public static void KillDriver()
         {
             var driver = ScenarioContext.Current.Get<IWebDriver>(TestConstants.Driver);

@@ -41,7 +41,9 @@
             switch (driverName)
             {
                 case DriverType.Chrome:
-                    return new ChromeDriver(path);
+                    var options = new ChromeOptions();
+                    options.AddArguments("--start-maximized");
+                    return new ChromeDriver(path, options);
                 case DriverType.FireFox:
                     return null;
                 case DriverType.Safari:

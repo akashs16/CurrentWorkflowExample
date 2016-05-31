@@ -22,6 +22,7 @@
         public void PlaceOrder(string paymentMethod)
         {
             this.Wait.Until(driver => driver.FindElement(By.CssSelector("#edit-payment-box > div > ul")).Displayed);
+            this.Wait.Until(driver => driver.FindElement(By.Id("shipping0")).Displayed && driver.FindElement(By.Id("shipping0")).Enabled);
             this.Driver.FindElement(By.Id(CheckoutPageSelector.ShippingAddressCheckboxId)).Click();
             this.Driver.FindElement(By.Id(CheckoutPageSelector.BillingAddressCheckboxId)).Click();
             this.SelectPaymentMethod(paymentMethod);
